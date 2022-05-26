@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//const App = () => 'Hola people exportando'
+/* const App = () => {
+    return <p>Hola people con export</p>
+} No se puede agregar más cosas */
+const App = () => {
+    return <>
+        <p>Hola</p>
+        <p>people</p>
+        <p>exportando</p>
+    </>
 }
+//Fragmento es una etiqueta vacía que no tiene nombre, se usa para rellenar y te permite meter varias etiquetas.
 
-export default App;
+//export default variable
+//export variable
+export default App 
