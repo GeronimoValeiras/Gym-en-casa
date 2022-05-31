@@ -17,3 +17,16 @@ Ej: const Foo () => {}
 JSX: JS and XML
 function foo (){}
 foo () === <foo />
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Cliente Side Rendering: El server entrega un html parcialmente vacío y js frontend completa el resto.
+
+Server Side Rendering: El server corre tu aplicación, el resultado lo mete en un html vacío y lo entrega.
+
+Static Site Rendering: Tenés los archivos físicos hardcodeados.
+
+Next js: HACE TODO.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
