@@ -1,14 +1,14 @@
 import React from 'react'
+import CartWidget from './CartWidget'
 
 const Navbar = () => {
   return (
     <navbar>
-        <h1>Título en proceso</h1>
-        <ul>
-            <li><a href="https://www.facebook.com" target='_blank'>Facebook</a></li>
-            <li><a href="https://www.instagram.com" target='_blank'>Instagram</a></li>
-            <li><a href="https://www.linkedin.com" target='_blank'>Linkedin</a></li>
-        </ul>
+        <h1>GeC</h1>
+            <a href="#" target='_blank'>Quiénes Somos</a>
+            <a href="#" target='_blank'>Productos</a>
+            <a href="#" target='_blank'>Contacto</a>
+            <CartWidget />
     </navbar>
   )
 }
