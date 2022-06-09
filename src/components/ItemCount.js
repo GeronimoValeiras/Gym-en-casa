@@ -7,7 +7,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     
     const aumentarContador = () => {
-        if (contador < 5) {
+        if (contador < stock) {
             setContador(contador + 1)
         }
     }
@@ -18,12 +18,16 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         }
     }
 
+    const confirmarContador = () => {
+        alert ("Agregado al carrito")
+    }
+
   return (
     <section>
         <p>Cantidad: {contador}</p>
         <button onClick={aumentarContador}>+</button>
         <button onClick={bajarContador}>-</button>
-        <button>Agregar al carrito</button>
+        <button onClick={confirmarContador}>Agregar al carrito</button>
     </section>
   )
 }
