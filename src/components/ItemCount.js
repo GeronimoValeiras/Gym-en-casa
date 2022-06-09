@@ -19,7 +19,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
 
     const confirmarContador = () => {
-        alert ("Agregado al carrito")
+        alert ("Se agregó al carrito")
     }
 
   return (
