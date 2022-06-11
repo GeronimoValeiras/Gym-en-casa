@@ -9,6 +9,8 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     const aumentarContador = () => {
         if (contador < stock) {
             setContador(contador + 1)
+        }else {
+            alert ("No puede superar el stock disponible")
         }
     }
 
