@@ -1,13 +1,15 @@
 import React from 'react'
-import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom'
 
-function Item({id, nombre, precio, stock, descripcion, imagen}) {
+function Item({id, nombre, precio, imagen}) {
   return (
     <section>
         <h3>{nombre}</h3>
         <h4>$ {precio}</h4>
         <img src={imagen} alt="" />
-        <ItemCount initial={0} stock={stock} />
+        <Link to={`/detail/${id}`}>
+          <button>Ver detalle</button>
+        </Link>
     </section>
   )
 }

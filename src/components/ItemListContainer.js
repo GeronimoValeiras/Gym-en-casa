@@ -1,16 +1,42 @@
 import React from 'react'
 import ItemList from './ItemList'
+import { useState, useEffect } from 'react'
+import { traerProductos, traerProductosPorCategory } from './products'
+import { useParams } from 'react-router-dom'
 
-const ItemListContainer = ( {greeting}) => {
 
+const ItemListContainer = ( {greeting} ) => {
+
+  const [items, setItems] = useState([])
+  const {category} = useParams()
+
+    useEffect(() => {
+        
+        if(!category){
+            traerProductos()
+            .then((res) => {
+                setItems(res);
+            })
+            .catch((rej) => {
+                console.log(rej)
+        })
+        }else{
+            traerProductosPorCategory(category)
+            .then((res) => {
+                setItems(res);
+            })
+            .catch((rej) => {
+                console.log(rej)
+            })
+        }        
+    }, [items])
 
     return (
     <>
     <section>
         <h2>{greeting}</h2>
-        <h3>¡Un gimnasio en la comodidad de tu hogar!</h3>
         <section>
-          <ItemList />
+          <ItemList items={items} />
         </section>
     </section>
     </>
