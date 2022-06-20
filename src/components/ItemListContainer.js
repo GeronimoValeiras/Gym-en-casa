@@ -29,7 +29,7 @@ const ItemListContainer = ( {greeting} ) => {
                 console.log(rej)
             })
         }        
-    }, [items])
+    }, [category])
 
     return (
     <>
