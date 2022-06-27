@@ -20,7 +20,7 @@ const ItemDetail = ({ product }) => {
           <h4>$ {product.precio}</h4>
           <img src={product.imagen} alt="" />
           <p>Agregaste {product.nombre}*{cantidadProducto} al carrito!</p>
-          <Link to='/cart'><button>Proceder a la compra</button></Link>
+          <Link to='/cart'><button>Proceder a la compra - Ir al carrito</button></Link>
       </section>
     )
   }else {
@@ -32,7 +32,6 @@ const ItemDetail = ({ product }) => {
           <img src={product.imagen} alt="" />
           <ItemCount initial={0} stock={product.stock} onAdd={onAdd} />
           <p>Unidades disponibles ({product.stock})</p>
-          <Link to='/cart'><button>Proceder a la compra</button></Link>
       </section>
     )
   }
