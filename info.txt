@@ -17,3 +17,45 @@ Ej: const Foo () => {}
 JSX: JS and XML
 function foo (){}
 foo () === <foo />
+
+
+----------------------------------------------------------
+
+import { createContext } from 'react'
+const contexto = createContext() Parece un estado inicial de useState. Se puede guardar muchas cosas, desde un 
+objeto a un array.
+Se puede leer su valor pero nunca cambiarlo, por ende no se pone valor inicial.
+Es un "componente" aparte.
+const Provider = contexto.Provider SI ES UN COMPONENTE.
+Todos los hijos del componente al que le asigno el PROVIDER pueden usarlo. Este componente viene adentro de 
+un contexto, determina quienes tienen acceso a la info y determina el valor del contexto.
+Se puede armar un provider para cada cosa que quiera.
+Entonces: MiContexto.js
+
+import { createContext } from 'react'
+
+const contexto = createContext()
+
+const Provider = contexto.Provider
+
+export const MiProvider = (props) => {      props se reemplaza por children.
+
+    console.log(props) -> Muestra todos los children dentro del componente
+
+    const valorDelContexto = {
+        carrito : [],
+        cantidad_total : 0,
+        precio_total : 0
+    }
+
+    return (
+        <Provider value={valorDelContexto}>
+            {children}
+        </Provider>
+    )
+}
+
+cp context provider y te lo completa el complemente simple react snippets
+
+Lo importo en App (o un componente padre que tengan en común los componentes donde lo quiero usar) 
+para que todos los hijos puedan usarlo. Encierro a los componentes que quiera dentro del Provider.
