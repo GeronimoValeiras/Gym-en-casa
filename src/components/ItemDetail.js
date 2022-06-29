@@ -1,8 +1,8 @@
 import React from 'react'
 import ItemCount from './ItemCount'
-import { Link } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import { contexto } from './CartContext'
+import Checkout from './Checkout'
 
 
 const ItemDetail = ({ product, id, nombre, precio, imagen, quantity }) => {
@@ -16,31 +16,17 @@ const ItemDetail = ({ product, id, nombre, precio, imagen, quantity }) => {
     addItem(id, nombre, precio, imagen, cantidadProducto)
   }
 
-  if (cantidadProducto > 0){
-    return (
-      <section>
+  return (
+    <section>
           <h3>{product.nombre}</h3>
           <p>{product.descripcion}</p>
           <h4>$ {product.precio}</h4>
           <img src={product.imagen} alt="" />
-          <p>Agregaste {product.nombre}*{cantidadProducto} al carrito!</p>
-          <Link to='/cart'><button>Proceder a la compra - Ir al carrito</button></Link>
-      </section>
-    )
-  }else {
-    return (
-      <section>
-          <h3>{product.nombre}</h3>
-          <p>{product.descripcion}</p>
-          <h4>$ {product.precio}</h4>
-          <img src={product.imagen} alt="" />
-          <ItemCount initial={0} stock={product.stock} onAdd={onAdd} />
-          <p>Unidades disponibles ({product.stock})</p>
-      </section>
-    )
-  }
-
-    
+          <section>
+          {cantidadProducto > 0 ? (<><p>Agregaste {product.nombre}*{cantidadProducto} al carrito!</p><Checkout/></>) : (<><ItemCount initial={0} stock={product.stock} onAdd={onAdd} /><p>Unidades disponibles ({product.stock})</p></>)}
+          </section>
+    </section>
+  )
   }
 
 export default ItemDetail
