@@ -5,15 +5,15 @@ import { contexto } from './CartContext'
 import Checkout from './Checkout'
 
 
-const ItemDetail = ({ product, id, nombre, precio, imagen, quantity }) => {
+const ItemDetail = ({ product }) => {
 
-  const { addItem } = useContext(contexto)
+  const { addItem, cart } = useContext(contexto)
 
   const [cantidadProducto, setCantidadProducto] = useState()
 
   const onAdd = (cantidadProducto) => {
     setCantidadProducto(cantidadProducto)
-    addItem(id, nombre, precio, imagen, cantidadProducto)
+    addItem(product, cantidadProducto)
   }
 
   return (

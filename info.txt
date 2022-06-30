@@ -59,3 +59,78 @@ cp context provider y te lo completa el complemente simple react snippets
 
 Lo importo en App (o un componente padre que tengan en común los componentes donde lo quiero usar) 
 para que todos los hijos puedan usarlo. Encierro a los componentes que quiera dentro del Provider.
+
+-------------------------------------------------------------------------------
+CLASE TECNICAS DE RENDERING
+
+EJ DE MAPEO PARA DESAFÍO CARTCONTEXT:
+export const MiProvider = ({children}) => {
+    const [carrito, setCarrito] = useState([])
+
+    const agregarProducto = (producto, cantidad) => {
+        const copia = carrito.map(prod=>prod)
+        copia.push(producto)
+        ó
+        const prod_encontrado = carrito.find()
+        prod_encontrado.cantidad = prod_encontrado.cantidad + cantidad
+        ó
+        const copia = carrito.slice()
+        ó
+        const copia = [...carrito] (OPERADOR REST..., te da todos los valores dispersos, si los encierro en [] obtengo la copia del array principal)
+        const nuevo_producto = {...producto, cantidad : cantidad}
+        copia.push(nuevo_producto)
+
+        setCarrito(copia)
+    }
+}
+
+Ejemplo formulario:
+const Cart = () => {
+
+  const {cart} = useContext(contexto)
+  const [nombre, setNombre] = useState("")
+  const [tel, setTel] = useState("")
+  const [email, setEmail] = useState("")
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    /* const nombre = e.target.elements.nombre.value
+    const tel = e.target.elements.tel.value
+    const email = e.target.elements.email.value
+    const usuario = { nombre, tel, email } */ //Es una forma, la de abajo va
+    const usuario = { nombre, tel, email }
+  }
+
+  const handleNombreChange = (e) => {
+    console.log(e.target.value)
+    setNombre(e.target.value)
+  }
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handleTelChange = (e) => {
+    setTel(e.target.value)
+  }
+
+  return (
+    <section>
+        <form onSubmit={handleSubmit}>
+          <section>
+            <input onChange={handleNombreChange} type="text" id="nombre" placeholder='Nombre...' />
+          </section>
+          <section>
+            <input onChange={handleEmailChange} type="email" id="email" placeholder='Email...' />
+          </section>
+          <section>
+            <input onChange={handleTelChange} type="number" id="telefono" placeholder='Teléfono...' />
+          </section>
+          <input type='text' />
+          <button>Comprar</button>
+        </form>
+    </section>
+  )
+}
+
+------------------------------------------------------------------
