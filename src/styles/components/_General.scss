@@ -3,4 +3,16 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-}
+};
+
+button {
+    border: 1px solid red;
+    padding: 4px;
+    border-radius: 4px;
+    color: red;
+
+    &:hover {
+        background-color: darkred;
+        color: white;
+    }
+};

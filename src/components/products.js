@@ -1,7 +1,7 @@
 const productosDB = [
     {
         id: 1,
-        nombre: 'Kit 50kg Barra De Entrenamiento+10 Discos+mancuernas+bandas',
+        nombre: 'Kit 50kg Barra De Entrenamiento + 10 Discos + mancuernas + bandas',
         precio: 13000,
         stock: 10,
         imagen: 'https://http2.mlstatic.com/D_NQ_NP_860127-MLA48578420920_122021-O.webp',
