@@ -1,0 +1,23 @@
+.tittle {
+    position: relative;
+    padding-left: 50%;
+    background-color: red;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: red;
+
+    &__items {
+        padding: 10px 10px 0px 10px;
+        margin: 10px 0;
+
+        &:hover {
+            background-color: darkred;
+            border-radius: 10px;
+        }
+    }
+
+}

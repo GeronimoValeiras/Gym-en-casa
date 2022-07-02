@@ -6,7 +6,7 @@ import { contexto } from './CartContext'
 
 const CartWidget = () => {
 
-  const {cart, addItemCartWidget} = useContext(contexto)
+  const {addItemCartWidget} = useContext(contexto)
 
   return (
     <>

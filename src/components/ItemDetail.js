@@ -7,7 +7,7 @@ import Checkout from './Checkout'
 
 const ItemDetail = ({ product }) => {
 
-  const { addItem, cart } = useContext(contexto)
+  const { addItem } = useContext(contexto)
 
   const [cantidadProducto, setCantidadProducto] = useState()
 

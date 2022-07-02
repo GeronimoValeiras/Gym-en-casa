@@ -32,14 +32,12 @@ const ItemListContainer = ( {greeting} ) => {
     }, [category])
 
     return (
-    <>
-    <section>
-        <h2>{greeting}</h2>
-        <section>
+    <section className='welcome'>
+        <h2 className='welcome__greeting'>{greeting}</h2>
+        <section className='welcome__shop'>
           <ItemList items={items} />
         </section>
     </section>
-    </>
   )  
 }
 

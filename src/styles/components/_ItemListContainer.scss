@@ -1,0 +1,18 @@
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__greeting {
+        margin: 20px 0;
+    };
+
+    &__shop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 10px;
+        margin: 0 10px;
+    }
+}
