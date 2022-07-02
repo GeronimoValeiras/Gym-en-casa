@@ -3,7 +3,7 @@ import { contexto } from './CartContext'
 
 const Cart = () => {
 
-  const {cart, addItemCartWidget, clear, removeItem, addItem} = useContext(contexto)
+  const {cart, addItemCartWidget, clear, removeItem, quantity} = useContext(contexto)
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -21,7 +21,7 @@ const Cart = () => {
         </section>
       ))}
       <section>
-        <p>Cantidad de items en carro: {addItemCartWidget()}</p>
+        <p>Cantidad de items en carro: {addItemCartWidget(quantity)}</p>
         <button onClick={clear}>Vaciar carrito</button>
       </section>
         <form>

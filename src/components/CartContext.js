@@ -42,7 +42,7 @@ export const MiProvider = ({children}) => {
 
 
     return (
-        <Provider value={{cart, addItem, addItemCartWidget, isInCart, removeItem, clear}}>
+        <Provider value={{cart, addItem, addItemCartWidget, isInCart, removeItem, clear }}>
             {children}
         </Provider>
     )
