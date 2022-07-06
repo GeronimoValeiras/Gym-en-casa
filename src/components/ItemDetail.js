@@ -16,6 +16,7 @@ const ItemDetail = ({ product }) => {
     addItem(product, cantidadProducto)
   }
 
+  
   return (
     <section>
           <h3>{product.nombre}</h3>

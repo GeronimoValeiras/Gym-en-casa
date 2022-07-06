@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import { traerProductoPorId } from './products'  //export con llaves porque es una const lo que traigo. Los default van sin llave
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
+import { productosDB } from "../firebase"
+import { getDoc, collection, doc } from 'firebase/firestore'
+
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
     const {id} = useParams()
     useEffect(() => {
-        traerProductoPorId(parseInt(id))
-            .then((res) => {
-                setProduct(res);
-            })
-            .catch((rej) => {
-                console.log(rej)
-            })
-    }, [product])
+        const productsCollection = collection(productosDB, "products")
+        const itemId = doc(productsCollection, id)
+        getDoc(itemId)
+        .then ((res)=>{
+            setProduct({id: res.id, ...res.data()})
+        })
+    }, [id])
   return (
     <div>
         <ItemDetail product={product} />

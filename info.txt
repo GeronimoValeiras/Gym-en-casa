@@ -134,3 +134,12 @@ const Cart = () => {
 }
 
 ------------------------------------------------------------------
+
+FIREBASE
+funciones
+//getDocs: Sirve para traer muchos documentos en una colección
+//getDoc: Sirve para trae un solo documento en base a su ID
+//doc: Referencia a un documento de colección
+//query
+//where
+//collection
