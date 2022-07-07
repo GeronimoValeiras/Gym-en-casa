@@ -143,3 +143,22 @@ funciones
 //query
 //where
 //collection
+//addDoc: Agrega un documento a la colleción
+//serverTimestap
+
+ EJ GUARDAR ORDER:
+
+ const handlebuy = () => {
+  const collectionOrders = collection(db, "ordenes")
+  const orderData = {
+    buyer : {
+      name: x,
+      phone: x,
+      email: x,
+    },
+    items: {},
+    date: serverTimestap(),
+    total:
+  }
+  const consulta = addDoc(collectionOrders,orderData)
+ }

@@ -40,9 +40,23 @@ export const MiProvider = ({children}) => {
         setCart ([])
     }
 
+    const totalProductPrice = (precio, quantity) => {
+        let productPrice = 0
+        productPrice = productPrice + (precio * quantity)
+        return Number(productPrice)
+    }
+
+    const totalCartPrice = () => {
+        let cartPrice = 0
+        cart.forEach((product) => {
+            cartPrice = cartPrice + (product.precio * product.quantity)
+            })
+        return Number(cartPrice)
+    }
+
 
     return (
-        <Provider value={{cart, addItem, addItemCartWidget, isInCart, removeItem, clear }}>
+        <Provider value={{cart, addItem, addItemCartWidget, isInCart, removeItem, clear, totalProductPrice, totalCartPrice }}>
             {children}
         </Provider>
     )
