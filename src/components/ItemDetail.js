@@ -18,12 +18,14 @@ const ItemDetail = ({ product }) => {
 
   
   return (
-    <section>
-          <h3>{product.nombre}</h3>
-          <p>{product.descripcion}</p>
-          <h4>$ {product.precio}</h4>
-          <img src={product.imagen} alt="" />
-          <section>
+    <section className='detailSection'>
+          <img src={product.imagen} alt="" className='detailSection__image' />
+          <section className='detailSection__aside'>
+            <h2>{product.nombre}</h2>
+            <p>{product.descripcion}</p>
+            <h3>$ {product.precio}</h3>
+          </section>
+          <section className='detailSection__checkout'>
           {cantidadProducto > 0 ? (<><p>Agregaste {product.nombre}*{cantidadProducto} al carrito!</p><Checkout/></>) : (<><ItemCount initial={0} stock={product.stock} onAdd={onAdd} /><p>Unidades disponibles ({product.stock})</p></>)}
           </section>
     </section>

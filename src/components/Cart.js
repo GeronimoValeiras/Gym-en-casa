@@ -55,7 +55,7 @@ const Cart = () => {
       (
     <section>
       {cart.map((product) => (
-        <section key={product.id}>
+        <section key={product.id} className='cartSection'>
           <h3>{product.nombre}</h3>
           <p>{product.descripcion}</p>
           <h4>$ {totalProductPrice(product.precio, product.quantity)}</h4>
@@ -63,12 +63,12 @@ const Cart = () => {
           <button onClick={() => removeItem(product.id)}>Quitar del carrito</button>
         </section>
       ))}
-      <section>
-        <p>Cantidad de items en carro: {addItemCartWidget(quantity)}</p>
-        <p>Precio total: $ {totalCartPrice()}</p>
+      <section className='cartTotal'>
+        <p className='cartTotal__items'>Cantidad de items en carro: {addItemCartWidget(quantity)}</p>
+        <p className='carTotal__price'>Precio total: $ {totalCartPrice()}</p>
         <button onClick={clear}>Vaciar carrito</button>
       </section>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='cartForm'>
           <input type='text' placeholder='Nombre' name='name' onChange={handleChange} value={data.name} required />
           <input type='text' placeholder='Email' name='email' onChange={handleChange} value={data.email} required />
           <input type='number' placeholder='Telefono' name='phone' onChange={handleChange} value={data.phone} required />
